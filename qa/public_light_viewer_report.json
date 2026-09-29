@@ -1,12 +1,13 @@
 {
   "source": "viewer/mlung3d_v3.2_full.html",
   "output": "viewer/mlung3d_v3.2_lite.html",
-  "grid_mm": 0.08,
+  "grid_mm": 0.12,
   "source_bytes": 44938483,
-  "light_bytes": 19032945,
+  "light_bytes": 4177564,
+  "local_engine_bytes": 664738,
   "source_vertices": 1971654,
-  "light_vertices": 370315,
+  "light_vertices": 173760,
   "source_faces": 3944782,
-  "light_faces": 743270,
-  "purpose": "display-only approximation; 3D clip allowed, 2D section and all exports disabled"
+  "light_faces": 349540,
+  "purpose": "display-only approximation; 3D clip allowed, E02 ROI/2D section/exports delegated to Full"
 }
