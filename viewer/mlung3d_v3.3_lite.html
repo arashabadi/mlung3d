@@ -1132,32 +1132,25 @@ window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(roiRecording)stopR
     context.putImageData(image,0,0);return copy;
   }
   // Read names and swatches from the on-screen Display legend, avoiding duplicate color maps.
-  function drawExportLobeLegend(ctx,width,height,sceneWidth){
+  function drawExportLobeLegend(ctx,width,height,clipped){
+    // A compact key sits inside the visual field, with no floating panel or border.
     const items=[...document.querySelectorAll('.legendGrid .legendItem')].map(node=>({
       name:node.textContent.trim(),color:getComputedStyle(node.querySelector('.dot')).backgroundColor
     }));
     if(items.length!==6)throw new Error('Export lobe key must match the six Display legend entries');
-    const scale=Math.max(.65,Math.min(1.8,width/1280));
-    const margin=Math.max(12,Math.round(width*.018));
-    const panelWidth=Math.round(Math.min(sceneWidth*.46,310*scale));
-    const pad=Math.round(12*scale),titleSize=Math.round(13*scale),bodySize=Math.round(13*scale);
-    const rowHeight=Math.round(24*scale),noteSize=Math.round(10*scale);
-    const note=wholeAlveolarGroup.visible?'Airspaces shown: schematic, not measured':'';
-    const panelHeight=pad*2+titleSize+Math.round(10*scale)+items.length*rowHeight+(note?noteSize+Math.round(12*scale):0);
-    const x=sceneWidth<width?sceneWidth-panelWidth-margin:margin;
-    const y=Math.max(44,Math.round(height*.095));
-    ctx.save();ctx.fillStyle='rgba(5,14,21,.84)';ctx.fillRect(x,y,panelWidth,panelHeight);
-    ctx.strokeStyle='rgba(179,215,226,.45)';ctx.lineWidth=Math.max(1,scale);ctx.strokeRect(x+.5,y+.5,panelWidth-1,panelHeight-1);
-    ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillStyle='#e8f8fd';
-    ctx.font='700 '+titleSize+'px system-ui,sans-serif';ctx.fillText('LOBE COLOR KEY',x+pad,y+pad+titleSize/2,panelWidth-2*pad);
-    const rowTop=y+pad+titleSize+Math.round(10*scale);
+    const scale=Math.max(.7,Math.min(1.5,width/1600));
+    const margin=Math.max(16,Math.round(width*.024));
+    const keyWidth=Math.round(184*scale),fontSize=Math.round(12*scale),rowHeight=Math.round(18*scale);
+    const x=width-margin-keyWidth;
+    const y=clipped?Math.round(height*.21):Math.max(62,Math.round(height*.10));
+    ctx.save();ctx.textAlign='left';ctx.textBaseline='middle';ctx.shadowColor='rgba(0,0,0,.95)';ctx.shadowBlur=Math.max(3,Math.round(5*scale));
+    ctx.font='700 '+fontSize+'px system-ui,sans-serif';ctx.fillStyle='#e8f8fd';ctx.fillText('LOBE COLORS',x,y,keyWidth);
     items.forEach((item,i)=>{
-      const cy=rowTop+i*rowHeight+rowHeight/2;
-      ctx.fillStyle=item.color;ctx.beginPath();ctx.arc(x+pad+Math.round(6*scale),cy,Math.max(4,Math.round(5*scale)),0,Math.PI*2);ctx.fill();
-      ctx.fillStyle='#e8f2f6';ctx.font='600 '+bodySize+'px system-ui,sans-serif';
-      ctx.fillText(item.name,x+pad+Math.round(18*scale),cy,panelWidth-2*pad-Math.round(18*scale));
+      const cy=y+Math.round(21*scale)+(i+.5)*rowHeight;
+      ctx.fillStyle=item.color;ctx.beginPath();ctx.arc(x+Math.round(5*scale),cy,Math.max(3,Math.round(4*scale)),0,Math.PI*2);ctx.fill();
+      ctx.fillStyle='#e8f2f6';ctx.font='600 '+fontSize+'px system-ui,sans-serif';ctx.fillText(item.name,x+Math.round(16*scale),cy,keyWidth-Math.round(16*scale));
     });
-    if(note){ctx.fillStyle='#b9d3dd';ctx.font=noteSize+'px system-ui,sans-serif';ctx.fillText(note,x+pad,y+panelHeight-pad-noteSize/2,panelWidth-2*pad)}
+    if(wholeAlveolarGroup.visible){ctx.fillStyle='#b9d3dd';ctx.font=Math.round(10*scale)+'px system-ui,sans-serif';ctx.fillText('Airspaces: schematic',x,y+Math.round(28*scale)+items.length*rowHeight,keyWidth)}
     ctx.restore();
   }
   function presentationFrame(maxWidth,forGif=false,showSection=false,transparent=false){
@@ -1191,7 +1184,7 @@ window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(roiRecording)stopR
       if(sectionPlane.visible){ctx.save();ctx.font=Math.max(10,Math.round(w/75))+'px system-ui,sans-serif';ctx.fillStyle='#d7f3ff';ctx.shadowColor='#061018';ctx.shadowBlur=5;const line=encodePlane(sectionAngle,sectionTilt,sectionDepth);ctx.fillText(line,Math.max(12,w*.02),h-Math.max(14,h*.04));ctx.restore()}
     }
     ctx.save();const credit='Created by Arash · arashabadi.github.io/mlung3d',fs=Math.max(14,Math.round(w/105)),cx=w-Math.max(18,Math.round(w*.02)),cy=h-Math.max(11,Math.round(h*.02));ctx.font='600 '+fs+'px system-ui,sans-serif';ctx.textAlign='right';if(!forGif&&!transparent){const tw=ctx.measureText(credit).width;ctx.fillStyle='rgba(5,8,13,.86)';ctx.fillRect(cx-tw-8,cy-fs-4,tw+16,fs+11)}ctx.fillStyle='rgba(214,237,246,.92)';ctx.fillText(credit,cx,cy);ctx.restore();ctx.save();ctx.textAlign='left';ctx.font='700 '+Math.max(14,Math.round(w/100))+'px system-ui,sans-serif';ctx.fillStyle='#d7f3ff';ctx.shadowColor='#05080d';ctx.shadowBlur=6;ctx.fillText('Mouse lung explorer · v3.3 Lite',Math.max(18,Math.round(w*.02)),Math.max(22,Math.round(h*.045)));ctx.restore();
-    drawExportLobeLegend(ctx,w,h,forGif&&showSection?Math.round(w*.63)-Math.max(12,Math.round(w*.015)):w);
+    drawExportLobeLegend(ctx,w,h,forGif&&showSection);
     scene.background=oldBackground;renderer.render(scene,camera);return out;
   }
   const pngSetup=document.getElementById('pngSetup'),pngQuality=document.getElementById('pngQuality');
