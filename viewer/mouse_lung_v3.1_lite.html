@@ -103,14 +103,14 @@ button:hover{border-color:rgba(124,216,255,.55)}button:active{transform:translat
   <div id="scene" aria-label="Interactive high-detail mouse lung model extracted from Blender"></div>
   <section id="ui" class="panel" style="max-height:calc(100vh - 32px);overflow:auto">
     <div class="eyebrow">3.1 · M07 model · NAV / Ruberte 2025</div>
-    <h1>Mouse lung explorer · v3.1 Lite</h1><p class="sub" style="color:#a8e3f1;border-left:2px solid #7bd9f3;padding-left:9px">Fast public preview · 0.08 mm clustered display mesh. Fine contours and 2D section boundaries are approximate. <a href="mouse_lung_v3.1.html" style="color:#a8e3f1">Open full-quality viewer</a>.</p>
+    <h1>Mouse lung explorer · v3.1 Lite</h1><p class="liteNotice" style="font-size:11px;line-height:1.45;margin:8px 0;color:#a8e3f1;border-left:2px solid #7bd9f3;padding-left:9px">Fast public preview · 0.08 mm clustered display mesh. Rotation and plane positioning work here; open the full viewer for accurate 2D sections and detailed contours. <a href="mouse_lung_v3.1.html" style="color:#a8e3f1">Open full-quality viewer</a>.</p>
     <p class="sub">Stationary ventral view. Reference lobe positions are preserved. Day 14 / 30 buttons show exploratory shape-based plane candidates, not established 3D registration.</p>
     <div class="btnGrid two" aria-label="Display toggles">
       <button id="toggleMouseContext">Show CT mouse body</button>
       <button id="toggleSection" class="primary">Show plane</button>
     </div>
     <div class="btnGrid three compact" aria-label="Viewer tools">
-      <button id="toggleClip">Clip</button>
+      <button id="toggleClip" disabled title="Open the full viewer for accurate 2D sections">Clip · full</button>
       <button id="resetView" class="ghost">Reset</button>
       <button id="toggleInfo" class="ghost">Info</button>
       <a id="homeLink" class="homeButton" href="https://arashabadi.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Open Arash Bagherabadi homepage">Homepage ↗</a>

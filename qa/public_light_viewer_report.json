@@ -3,7 +3,7 @@
   "output": "viewer/mouse_lung_v3.1_lite.html",
   "grid_mm": 0.08,
   "source_bytes": 44917898,
-  "light_bytes": 19009407,
+  "light_bytes": 19009584,
   "source_vertices": 1971654,
   "light_vertices": 370315,
   "source_faces": 3944782,
