@@ -1,0 +1,20 @@
+[
+  {
+    "file": "mouse_lung_3d_blender_detail_v25_clip_exact_plane.html",
+    "sha256": "9d6e6d1779276bfb7c64011c9cc69184a10dac556b8158b5f876abfe21ba3fa1",
+    "origin": "historical local snapshot before xenium-to-standalone migration",
+    "archive_path": "viewer/archive/mouse_lung_3d_blender_detail_v25_clip_exact_plane.html"
+  },
+  {
+    "file": "mouse_lung_3d_blender_detail_v26_anatomy_reference.html",
+    "sha256": "5d0cf602e49d5c42a733fdd51eee768e30da4b6a4ab3a0534363b9aabad5c5e9",
+    "origin": "historical local snapshot before xenium-to-standalone migration",
+    "archive_path": "viewer/archive/mouse_lung_3d_blender_detail_v26_anatomy_reference.html"
+  },
+  {
+    "file": "mouse_lung_3d_blender_detail_v27_anatomy_reference.html",
+    "sha256": "d00829b7ece39accd4908017be175874134e77901f3aed0dc7de4ababf7b5d5a",
+    "origin": "historical local snapshot before xenium-to-standalone migration",
+    "archive_path": "viewer/archive/mouse_lung_3d_blender_detail_v27_anatomy_reference.html"
+  }
+]

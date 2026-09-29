@@ -1,0 +1,12 @@
+{
+  "version": "3.0",
+  "output": "viewer/mouse_lung_v3.0.html",
+  "sha256": "fc602ada64d9de2ccb23c135fc41e30e93c139a8ac6de944fa59c74335ae76ea",
+  "mesh_payload_sha256": "a4aff1883b21f29fe2953293c15753064940d7721b7c8327531a4c3cbab97d8e",
+  "checks": [
+    "JavaScript syntax",
+    "unchanged reference mesh",
+    "main and ROI PNG controls"
+  ],
+  "browser": "Loaded in Chrome; reference clip and schematic 2D toggles checked; PNG preparation observed; downloaded file not independently inspected"
+}
