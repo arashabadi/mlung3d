@@ -1,0 +1,44 @@
+{
+  "doi": "10.7910/DVN/XO8FQY",
+  "scan": "mouseE02",
+  "pressure_cmH2O": 10,
+  "source_pixel_um": 1.1,
+  "effective_voxel_um": 2.2,
+  "frame": "acquisition-ROI-XYZ-not-anatomical",
+  "roi_original_detector_rows": [
+    900,
+    1092
+  ],
+  "roi_reconstruction_y": [
+    610,
+    770
+  ],
+  "roi_reconstruction_x": [
+    620,
+    780
+  ],
+  "shape_zyx": [
+    96,
+    160,
+    160
+  ],
+  "reconstruction": {
+    "rows": [
+      900,
+      1092
+    ],
+    "bin": 2,
+    "source_pixel_um": 1.1,
+    "center_detector_px": 1008.13,
+    "projection_count": 900,
+    "filter": "hann",
+    "flat": "linear_pre_post",
+    "reconstruction": "propagation_contrast_FBP"
+  },
+  "fbp_pilot_relative_error": 0.0,
+  "threshold": 0.000513026025146246,
+  "tissue_fraction": 0.13954630533854168,
+  "mesh_vertices": 433334,
+  "mesh_faces": 858962,
+  "interpretation": "exploratory tissue interface; not individually segmented alveoli; no m07 registration"
+}

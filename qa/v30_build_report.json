@@ -1,0 +1,14 @@
+{
+  "output": "outs_v1.0/03_SED/primary_molecule_based/lung_viewer/mouse_lung_v30.html",
+  "sha256": "46afb1b77b34309e5e577e35474f5617ae23148639c04ed6a145ed18e6c32f0c",
+  "section_method": "Plane intersection of the identical instanced schematic polyhedron triangles; same plane basis and scale as reference lobes.",
+  "checks": [
+    "translated contours",
+    "oblique plane",
+    "outside plane",
+    "toggle off",
+    "JavaScript syntax",
+    "unchanged reference mesh"
+  ],
+  "browser_interaction_tested": false
+}

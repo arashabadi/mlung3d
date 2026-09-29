@@ -1,0 +1,97 @@
+User ID : e13657
+FAST-TOMO scan of sample mouseE02 started on Fri Nov 02 21:46:10 2012
+--------------------Beamline Settings-------------------------
+Ring current [mA]           : 400.000
+Beam energy  [keV]          : 0.001
+Monostripe                  : Undefined
+FE-Filter                   : No Filter 100%
+OP-Filter 1                 : 100um Al
+OP-Filter 2                 : No Filter
+OP-Filter 3                 : No Filter
+--------------------Detector Settings-------------------------
+Camera                      : PCO.Dimax
+Microscope                  : Opt.Peter MB op
+Magnification               : 10.00
+Scintillator                : LuAG:Ce 100um
+Exposure time [ms]          : 5
+Delay time [ms]             : 0
+Millisecond shutter [ms]    : not used
+X-ROI                       : 1 - 2016
+Y-ROI                       : 1 - 2016
+Actual pixel size [um]      : 1.10
+------------------------Scan Settings-------------------------
+Sample folder                : /sls/X02DA/data/e13657/Data10/disk2/mouseE02
+File Prefix                  : mouseE02
+Number of Scans              : 1
+Pause btw Scans              : 0
+Number of projections        : 901
+Number of darks              : 30
+Number of flats              : 100
+Number of inter-flats        : 0
+Flat frequency               : 0
+Rot Y min position  [deg]    : 0.000
+Rot Y max position  [deg]    : 180.000
+Angular step [deg]           : 0.200
+Sample In   [um]             :     0
+Sample Out  [um]             : -20000
+-----------------------Sample coordinates---------------------
+X-coordinate                 : -22269.10
+Y-coordinate                 : -24300.00
+Z-coordinate                 : -24482.00
+XX-coordinate                : -1277.02
+ZZ-coordinate                : 2873.22
+--------------------------------------------------------------
+Starting angle 0.000008
+TOMOGRAPHIC SCAN started at Fri Nov 02 21:47:40 2012
+TOMOGRAPHIC SCAN FINISHED at Fri Nov 02 21:50:17 2012
+Lines used for estimate: 1, 51, 101, 151, 201, 251, 301, 351, 401, 451, 501, 551, 601, 651, 701, 751, 801, 851, 901, 951, 1001, 1051, 1101, 1151, 1201, 1251, 1301, 1351, 1401, 1451, 1501, 1551, 1601, 1651, 1701, 1751, 1801, 1851, 1901, 1951, 2001
+Rotation center: 1008.13
+Rotation center (non padded): 1008.13
+------------------------------------------------------------
+
+-------------- Projection information -------------------
+Original tif projections        2016x2016 pixels
+Total size of Tiff projections   8978096 kb
+------------- Reconstruction parameters -----------------
+Used algorithm             GridRec
+Reconstruction directory   /sls/X02DA/data/e13657/Data10/disk2/mouseE02/rec_8bit/
+Center                     1008.63
+Filter                     Parzen
+Rotation                   0.00
+Geometry                   Homogeneous angular projection distribution between 0 and pi
+Binning for reconstruction 1
+Roi for reconstruction     0,0,0,0
+Ring removal               Off
+Zinger removal             Off
+Output format              TIFF8   Scaling parameters -0.0014218,0.0017245
+Zero Padding               0.50
+------------- Reconstruction Information -----------------
+Size of reconstructed slice 3.88MB
+Size of reconstructed dataset 7.63GB
+
+
+Original rotation center: 1007.75
+------------------- Projection Information -------------------------------
+Original tif projection 	 2016x2016 pixels
+Total size of Tiff projection 	 9193347kb
+reconstruction was not selected
+Original rotation center: 1007.75
+------------------- Projection Information -------------------------------
+Original tif projection 	 2016x2016 pixels
+Total size of Tiff projection 	 9193347kb
+reconstruction was not selected
+Original rotation center: 1007.75
+------------------- Projection Information -------------------------------
+Original tif projection 	 2016x2016 pixels
+Total size of Tiff projection 	 9193347kb
+reconstruction was not selected
+Original rotation center: 1007.75
+------------------- Projection Information -------------------------------
+Original tif projection 	 2016x2016 pixels
+Total size of Tiff projection 	 9193347kb
+reconstruction was not selected
+Original rotation center: 1007.75
+------------------- Projection Information -------------------------------
+Original tif projection 	 2016x2016 pixels
+Total size of Tiff projection 	 9193347kb
+reconstruction was not selected

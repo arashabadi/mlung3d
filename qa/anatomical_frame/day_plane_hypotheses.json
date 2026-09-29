@@ -1,0 +1,90 @@
+{
+  "D14": [
+    {
+      "azimuth": -90,
+      "elevation": -45,
+      "offset_mm": -4,
+      "lobe": "Right cranial lobe",
+      "label": 2,
+      "iou": 0.8444216990788127,
+      "normal": [
+        4.329780281177467e-17,
+        -0.7071067811865476,
+        -0.7071067811865475
+      ],
+      "plane_id": "LP1.eyJ2IjoxLCJtb2RlbCI6ImE0YWZmMTg4M2IyMWYyOWZlMjk1MzI5M2MxNTc1MzA2NDk0MGQ3NzIxYjdjODMyNzUzMWE0YzNjYmFiOTdkOGUiLCJmcmFtZSI6ImxvY2FsLVJWQ1ItdjEiLCJ1bml0IjoibW0iLCJuIjpbMCwtMC43MDcxMDY3ODEyLC0wLjcwNzEwNjc4MTJdLCJkIjotNCwiYmFzaXMiOiJoZWxwZXItdXAtdjEifQ"
+    },
+    {
+      "azimuth": 90,
+      "elevation": 45,
+      "offset_mm": 4,
+      "lobe": "Right cranial lobe",
+      "label": 2,
+      "iou": 0.8444216990788127,
+      "normal": [
+        4.329780281177467e-17,
+        0.7071067811865476,
+        0.7071067811865475
+      ],
+      "plane_id": "LP1.eyJ2IjoxLCJtb2RlbCI6ImE0YWZmMTg4M2IyMWYyOWZlMjk1MzI5M2MxNTc1MzA2NDk0MGQ3NzIxYjdjODMyNzUzMWE0YzNjYmFiOTdkOGUiLCJmcmFtZSI6ImxvY2FsLVJWQ1ItdjEiLCJ1bml0IjoibW0iLCJuIjpbMCwwLjcwNzEwNjc4MTIsMC43MDcxMDY3ODEyXSwiZCI6NCwiYmFzaXMiOiJoZWxwZXItdXAtdjEifQ"
+    },
+    {
+      "azimuth": -45,
+      "elevation": -15,
+      "offset_mm": 0,
+      "lobe": "Right cranial lobe",
+      "label": 2,
+      "iou": 0.8433981576253838,
+      "normal": [
+        0.6830127018922194,
+        -0.6830127018922193,
+        -0.25881904510252074
+      ],
+      "plane_id": "LP1.eyJ2IjoxLCJtb2RlbCI6ImE0YWZmMTg4M2IyMWYyOWZlMjk1MzI5M2MxNTc1MzA2NDk0MGQ3NzIxYjdjODMyNzUzMWE0YzNjYmFiOTdkOGUiLCJmcmFtZSI6ImxvY2FsLVJWQ1ItdjEiLCJ1bml0IjoibW0iLCJuIjpbMC42ODMwMTI3MDE5LC0wLjY4MzAxMjcwMTksLTAuMjU4ODE5MDQ1MV0sImQiOjAsImJhc2lzIjoiaGVscGVyLXVwLXYxIn0"
+    }
+  ],
+  "D30": [
+    {
+      "azimuth": 15,
+      "elevation": -15,
+      "offset_mm": 2,
+      "lobe": "Right middle lobe",
+      "label": 3,
+      "iou": 0.897206114918292,
+      "normal": [
+        0.9330127018922194,
+        0.24999999999999997,
+        -0.25881904510252074
+      ],
+      "plane_id": "LP1.eyJ2IjoxLCJtb2RlbCI6ImE0YWZmMTg4M2IyMWYyOWZlMjk1MzI5M2MxNTc1MzA2NDk0MGQ3NzIxYjdjODMyNzUzMWE0YzNjYmFiOTdkOGUiLCJmcmFtZSI6ImxvY2FsLVJWQ1ItdjEiLCJ1bml0IjoibW0iLCJuIjpbMC45MzMwMTI3MDE5LDAuMjUsLTAuMjU4ODE5MDQ1MV0sImQiOjIsImJhc2lzIjoiaGVscGVyLXVwLXYxIn0"
+    },
+    {
+      "azimuth": 45,
+      "elevation": -15,
+      "offset_mm": -2,
+      "lobe": "Right caudal lobe",
+      "label": 4,
+      "iou": 0.8928008407777194,
+      "normal": [
+        0.6830127018922194,
+        0.6830127018922193,
+        -0.25881904510252074
+      ],
+      "plane_id": "LP1.eyJ2IjoxLCJtb2RlbCI6ImE0YWZmMTg4M2IyMWYyOWZlMjk1MzI5M2MxNTc1MzA2NDk0MGQ3NzIxYjdjODMyNzUzMWE0YzNjYmFiOTdkOGUiLCJmcmFtZSI6ImxvY2FsLVJWQ1ItdjEiLCJ1bml0IjoibW0iLCJuIjpbMC42ODMwMTI3MDE5LDAuNjgzMDEyNzAxOSwtMC4yNTg4MTkwNDUxXSwiZCI6LTIsImJhc2lzIjoiaGVscGVyLXVwLXYxIn0"
+    },
+    {
+      "azimuth": -30,
+      "elevation": 15,
+      "offset_mm": 2,
+      "lobe": "Right middle lobe",
+      "label": 3,
+      "iou": 0.8881889763779528,
+      "normal": [
+        0.8365163037378079,
+        -0.4829629131445341,
+        0.25881904510252074
+      ],
+      "plane_id": "LP1.eyJ2IjoxLCJtb2RlbCI6ImE0YWZmMTg4M2IyMWYyOWZlMjk1MzI5M2MxNTc1MzA2NDk0MGQ3NzIxYjdjODMyNzUzMWE0YzNjYmFiOTdkOGUiLCJmcmFtZSI6ImxvY2FsLVJWQ1ItdjEiLCJ1bml0IjoibW0iLCJuIjpbMC44MzY1MTYzMDM3LC0wLjQ4Mjk2MjkxMzEsMC4yNTg4MTkwNDUxXSwiZCI6MiwiYmFzaXMiOiJoZWxwZXItdXAtdjEifQ"
+    }
+  ]
+}

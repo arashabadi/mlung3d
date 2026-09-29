@@ -1,0 +1,20 @@
+{
+  "D14": {
+    "accession": "GSM8837316",
+    "title": "Mouse_Lung_Flu_d14",
+    "section_thickness_um": 5,
+    "lobe": "not_reported",
+    "plane": "unregistered",
+    "depth": "not_reported",
+    "orientation_terms_found": []
+  },
+  "D30": {
+    "accession": "GSM9364368",
+    "title": "Mouse_Lung_Flu_d30",
+    "section_thickness_um": 5,
+    "lobe": "not_reported",
+    "plane": "unregistered",
+    "depth": "not_reported",
+    "orientation_terms_found": []
+  }
+}

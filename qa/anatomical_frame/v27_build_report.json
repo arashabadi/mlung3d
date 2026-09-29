@@ -1,0 +1,141 @@
+{
+  "output_path": "viewer/archive/mouse_lung_3d_blender_detail_v27_anatomy_reference.html",
+  "output_sha256": "d00829b7ece39accd4908017be175874134e77901f3aed0dc7de4ababf7b5d5a",
+  "geometry_payload_unchanged": true,
+  "left_right_render_reflection_removed": true,
+  "default_rotation": false,
+  "default_view": "ventral",
+  "model_bbox_fit": {
+    "perm": [
+      0,
+      1,
+      2
+    ],
+    "signs": [
+      -1,
+      -1,
+      1
+    ],
+    "translation": [
+      15.166304216235872,
+      10.236768446015118,
+      -11.94307390913784
+    ],
+    "bbox_rmse_mm": 0.018576082252190266
+  },
+  "section_provenance": {
+    "D14": {
+      "accession": "GSM8837316",
+      "title": "Mouse_Lung_Flu_d14",
+      "section_thickness_um": 5,
+      "lobe": "not_reported",
+      "plane": "unregistered",
+      "depth": "not_reported",
+      "orientation_terms_found": []
+    },
+    "D30": {
+      "accession": "GSM9364368",
+      "title": "Mouse_Lung_Flu_d30",
+      "section_thickness_um": 5,
+      "lobe": "not_reported",
+      "plane": "unregistered",
+      "depth": "not_reported",
+      "orientation_terms_found": []
+    }
+  },
+  "browser_live_test": "not_performed_local_file_URL_blocked",
+  "reference": {
+    "url": "https://cebs-ext.niehs.nih.gov/cahs/report/lapd/m07",
+    "license": "CC BY 4.0"
+  },
+  "body_orientation_rotation": [
+    [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      -1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "body_source_sha256": "dbffba9a62906c4a028a81692bd60ef26ea69863948c4f1b067f1cf963b68967",
+  "body_anchor_after_final_scale": true,
+  "body_uniform_scale": 11.8,
+  "thorax_min_source": [
+    -0.85,
+    -1.65,
+    0.55
+  ],
+  "thorax_max_source": [
+    0.85,
+    -0.3,
+    2.35
+  ],
+  "lung_fit": "uniform_lobe_bbox_90_percent_with_center_compensation",
+  "body_registration": "illustrative_only_not_specimen_registered",
+  "lung_context_scale": 0.958396577488888,
+  "lung_context_translation": [
+    -4.569991004414024e-07,
+    -11.505000228499549,
+    18.78264229956516
+  ],
+  "lung_bbox_inside_thorax_envelope": true,
+  "section_panel": "exact_triangle_plane_intersection_with_evenodd_closed_contours",
+  "section_kernel_tests": {
+    "cube_area": 4,
+    "nested_loops": 2,
+    "empty": true
+  },
+  "day_buttons": "top_three_unvalidated_outer_silhouette_hypotheses",
+  "actual_mesh_section_validation": [
+    {
+      "plane": "Screenshot plane",
+      "elapsed_ms": 62,
+      "closed": 22,
+      "open": 0
+    },
+    {
+      "plane": "Sagittal",
+      "elapsed_ms": 45,
+      "closed": 15,
+      "open": 0
+    },
+    {
+      "plane": "Dorsal",
+      "elapsed_ms": 34,
+      "closed": 42,
+      "open": 6
+    },
+    {
+      "plane": "Transverse",
+      "elapsed_ms": 35,
+      "closed": 37,
+      "open": 0
+    }
+  ],
+  "plane_address": {
+    "schema": "LP1",
+    "model_sha256": "a4aff1883b21f29fe2953293c15753064940d7721b7c8327531a4c3cbab97d8e",
+    "frame": "local-RVCR-v1",
+    "equation": "dot(n,x)=d",
+    "unit": "mm",
+    "normal_decimal_places": 10,
+    "offset_decimal_places": 6,
+    "tests": {
+      "cases": 120,
+      "max_normal_error": 4.895406302551919e-11,
+      "invalid_rejected": 4,
+      "example": "LP1.eyJ2IjoxLCJtb2RlbCI6ImE0YWZmMTg4M2IyMWYyOWZlMjk1MzI5M2MxNTc1MzA2NDk0MGQ3NzIxYjdjODMyNzUzMWE0YzNjYmFiOTdkOGUiLCJmcmFtZSI6ImxvY2FsLVJWQ1ItdjEiLCJ1bml0IjoibW0iLCJuIjpbMC45NjU5MjU4MjYzLDAuMjU4ODE5MDQ1MSwwXSwiZCI6LTUuOSwiYmFzaXMiOiJoZWxwZXItdXAtdjEifQ"
+    }
+  },
+  "version": 27,
+  "alveolar_layer": "not_added_no_validated_same_frame_geometry",
+  "historical_output_path_redacted": true
+}

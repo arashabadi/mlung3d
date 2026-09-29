@@ -1,0 +1,7 @@
+/data/
+.DS_Store
+.ipynb_checkpoints/
+**/__pycache__/
+/viewer/mouse_lung_v28.html
+/viewer/mouse_lung_v29.html
+/viewer/mouse_lung_v30.html

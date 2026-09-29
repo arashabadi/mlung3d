@@ -1,0 +1,72 @@
+{
+  "output_path": "viewer/archive/mouse_lung_v28.html",
+  "output_sha256": "c9c415ca22c3a30e45ab57fccf4920ade42aa11511181633c68cb17595651ef7",
+  "version": 28,
+  "source_v27_sha256": "d00829b7ece39accd4908017be175874134e77901f3aed0dc7de4ababf7b5d5a",
+  "reference_mesh_payload_unchanged": true,
+  "roi_volume_sha256": "47f0a3625ff241a787b05f2d86f79308bdb4da7482b085234e93b961c6fd3db4",
+  "roi_provenance": {
+    "doi": "10.7910/DVN/XO8FQY",
+    "scan": "mouseE02",
+    "pressure_cmH2O": 10,
+    "source_pixel_um": 1.1,
+    "effective_voxel_um": 2.2,
+    "frame": "acquisition-ROI-XYZ-not-anatomical",
+    "roi_original_detector_rows": [
+      900,
+      1092
+    ],
+    "roi_reconstruction_y": [
+      610,
+      770
+    ],
+    "roi_reconstruction_x": [
+      620,
+      780
+    ],
+    "shape_zyx": [
+      96,
+      160,
+      160
+    ],
+    "reconstruction": {
+      "rows": [
+        900,
+        1092
+      ],
+      "bin": 2,
+      "source_pixel_um": 1.1,
+      "center_detector_px": 1008.13,
+      "projection_count": 900,
+      "filter": "hann",
+      "flat": "linear_pre_post",
+      "reconstruction": "propagation_contrast_FBP"
+    },
+    "fbp_pilot_relative_error": 0.0,
+    "threshold": 0.000513026025146246,
+    "tissue_fraction": 0.13954630533854168,
+    "mesh_vertices": 433334,
+    "mesh_faces": 858962,
+    "interpretation": "exploratory tissue interface; not individually segmented alveoli; no m07 registration"
+  },
+  "address_validation": {
+    "cases": 75,
+    "maxError": 0,
+    "rejected": 2,
+    "user_address": "M07-RVCR1@a4aff1883b21;az=2.942530deg;el=-15.000000deg;d=-5.143408mm"
+  },
+  "removed_buttons": [
+    "focusVentralLobes",
+    "showD14",
+    "showD30"
+  ],
+  "validation": [
+    "JS syntax",
+    "source checksums",
+    "FBP ROI matches full pilot",
+    "binary round trip",
+    "unique HTML IDs"
+  ],
+  "live_browser_test": "not_performed",
+  "historical_output_path_redacted": true
+}

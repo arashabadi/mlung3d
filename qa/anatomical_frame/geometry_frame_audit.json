@@ -1,0 +1,41 @@
+{
+  "best_transform": {
+    "perm": [
+      0,
+      1,
+      2
+    ],
+    "signs": [
+      -1,
+      -1,
+      1
+    ],
+    "translation": [
+      15.166304216235872,
+      10.236768446015118,
+      -11.94307390913784
+    ],
+    "bbox_rmse_mm": 0.018576082252190266
+  },
+  "runner_up": {
+    "perm": [
+      0,
+      1,
+      2
+    ],
+    "signs": [
+      -1,
+      1,
+      1
+    ],
+    "translation": [
+      15.166304216235872,
+      -9.93238335614085,
+      -11.94307390913784
+    ],
+    "bbox_rmse_mm": 1.8600134973418816
+  },
+  "source_v25_sha256": "9d6e6d1779276bfb7c64011c9cc69184a10dac556b8158b5f876abfe21ba3fa1",
+  "reference_sha256": "17a7b0c9a21b71d2f7de5290e0ecac44657b1876cd6cf28d53493db1fb90dee3",
+  "method": "all 48 signed axis permutations; global translation only; five label bounding boxes"
+}
