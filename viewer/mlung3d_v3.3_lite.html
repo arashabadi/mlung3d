@@ -1104,8 +1104,8 @@ window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(roiRecording)stopR
     const size=Math.max(100,Math.min(240,w*.16,h*.28));
     const fontSize=Math.max(12,Math.min(18,Math.round(h/85)));
     const lineHeight=Math.round(fontSize*1.4);
-    const x=onLeft?Math.max(36,Math.round(w*.025)):w-size-Math.max(240,Math.round(w*.12));
-    const y=h-size-(6*lineHeight+55),scale=size/128;
+    const x=Math.max(36,Math.round(w*.025));
+    const y=h-size-(6*lineHeight+105),scale=size/128;
     ctx.save();ctx.translate(x,y);ctx.scale(scale,scale);
     for(const line of svg.querySelectorAll('line')){ctx.beginPath();ctx.moveTo(Number(line.getAttribute('x1')),Number(line.getAttribute('y1')));ctx.lineTo(Number(line.getAttribute('x2')),Number(line.getAttribute('y2')));ctx.strokeStyle=line.getAttribute('stroke')||'#d7f3ff';ctx.globalAlpha=Number(line.getAttribute('opacity')||1);ctx.lineWidth=2.5;ctx.lineCap='round';ctx.stroke()}
     ctx.globalAlpha=1;ctx.fillStyle='#d7f3ff';ctx.beginPath();ctx.arc(64,64,3,0,Math.PI*2);ctx.fill();ctx.font='bold 10px system-ui,sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
@@ -1142,7 +1142,7 @@ window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(roiRecording)stopR
     const margin=Math.max(16,Math.round(width*.024));
     const keyWidth=Math.round(184*scale),fontSize=Math.round(12*scale),rowHeight=Math.round(18*scale);
     const x=width-margin-keyWidth;
-    const y=clipped?Math.round(height*.21):Math.max(62,Math.round(height*.10));
+    const y=clipped?height-Math.max(230,Math.round(height*.19))+Math.round(4*scale):Math.max(62,Math.round(height*.10));
     ctx.save();ctx.textAlign='left';ctx.textBaseline='middle';ctx.shadowColor='rgba(0,0,0,.95)';ctx.shadowBlur=Math.max(3,Math.round(5*scale));
     ctx.font='700 '+fontSize+'px system-ui,sans-serif';ctx.fillStyle='#e8f8fd';ctx.fillText('LOBE COLORS',x,y,keyWidth);
     items.forEach((item,i)=>{
