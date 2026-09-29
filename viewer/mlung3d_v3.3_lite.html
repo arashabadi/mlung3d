@@ -1178,7 +1178,7 @@ window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(roiRecording)stopR
       drawCompactCompass(ctx,leftW,h,true);
     }else{
       if(forGif){const ar=w/h;let ch=source.height,cw=ch*ar;if(cw>source.width){cw=source.width;ch=cw/ar}ctx.drawImage(source,(source.width-cw)/2,(source.height-ch)/2,cw,ch,0,0,w,h)}else ctx.drawImage(source,0,0,w,h);drawCompactCompass(ctx,w,h);
-      if(sectionPlane.visible){ctx.save();ctx.font=Math.max(10,Math.round(w/75))+'px system-ui,sans-serif';ctx.fillStyle='#d7f3ff';ctx.shadowColor='#061018';ctx.shadowBlur=5;const line=encodePlane(sectionAngle,sectionTilt,sectionDepth);ctx.fillText(line,Math.max(12,w*.02),h-Math.max(14,h*.04));ctx.restore()}
+      if(sectionPlane.visible){ctx.save();ctx.textAlign='left';ctx.font=Math.max(8,Math.round(w/120))+'px ui-monospace,monospace';ctx.fillStyle='#bdd8e2';const line=encodePlane(sectionAngle,sectionTilt,sectionDepth),split=line.indexOf(';'),x=w*.02;ctx.fillText(line.slice(0,split+1),x,h*.085,w*.65);ctx.fillText(line.slice(split+1),x,h*.115,w*.65);ctx.restore()}
     }
     ctx.save();const credit='Created by Arash · arashabadi.github.io/mlung3d',fs=Math.max(14,Math.round(w/105)),cx=w-Math.max(18,Math.round(w*.02)),cy=h-Math.max(11,Math.round(h*.02));ctx.font='600 '+fs+'px system-ui,sans-serif';ctx.textAlign='right';if(!forGif&&!transparent){const tw=ctx.measureText(credit).width;ctx.fillStyle='rgba(5,8,13,.86)';ctx.fillRect(cx-tw-8,cy-fs-4,tw+16,fs+11)}ctx.fillStyle='rgba(214,237,246,.92)';ctx.fillText(credit,cx,cy);ctx.restore();ctx.save();ctx.textAlign='left';ctx.font='700 '+Math.max(14,Math.round(w/100))+'px system-ui,sans-serif';ctx.fillStyle='#d7f3ff';ctx.shadowColor='#05080d';ctx.shadowBlur=6;ctx.fillText('Mouse lung explorer · v3.3 Lite',Math.max(18,Math.round(w*.02)),Math.max(22,Math.round(h*.045)));ctx.restore();
     drawExportLobeLegend(ctx,w,h,forGif&&showSection);
@@ -1271,17 +1271,17 @@ window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(roiRecording)stopR
     const height=Math.round(width*9/16),out=document.createElement('canvas');out.width=width;out.height=height;
     const ctx=out.getContext('2d');if(!transparent){ctx.fillStyle='#05080d';ctx.fillRect(0,0,width,height)}else ctx.clearRect(0,0,width,height);
     const pad=Math.max(16,Math.round(width*.025)),top=Math.round(height*.13),bottom=Math.round(height*.21),contentH=height-top-bottom,leftW=Math.round(width*.62),rightX=leftW+pad;
-    if(alvRenderer){const oldBg=alvScene.background;if(transparent){alvScene.background=null;alvRenderer.setClearColor(0x000000,0)}alvRenderer.render(alvScene,alvCamera);const source=alvRenderer.domElement;ctx.drawImage(source,0,0,source.width,source.height,pad,top,leftW-pad*2,contentH);if(transparent){alvScene.background=oldBg;alvRenderer.setClearColor(0x080d12,1);alvRenderer.render(alvScene,alvCamera)}}
+    if(alvRenderer){const oldBg=alvScene.background;if(transparent){alvScene.background=null;alvRenderer.setClearColor(0x000000,0)}alvRenderer.render(alvScene,alvCamera);const source=alvRenderer.domElement;const fit=Math.min((leftW-pad*2)/source.width,contentH/source.height),dw=source.width*fit,dh=source.height*fit;ctx.drawImage(source,0,0,source.width,source.height,pad+(leftW-pad*2-dw)/2,top+(contentH-dh)/2,dw,dh);if(transparent){alvScene.background=oldBg;alvRenderer.setClearColor(0x080d12,1);alvRenderer.render(alvScene,alvCamera)}}
     const slice=document.getElementById('roiSlice'),rightW=width-rightX-pad;
     if(slice.width&&slice.height){const scale=Math.min(rightW/slice.width,contentH/slice.height),dw=slice.width*scale,dh=slice.height*scale;ctx.imageSmoothingEnabled=false;ctx.drawImage(transparent?darkPixelsToAlpha(slice):slice,0,0,slice.width,slice.height,rightX+(rightW-dw)/2,top+(contentH-dh)/2,dw,dh);ctx.imageSmoothingEnabled=true}
-    ctx.fillStyle='#ddf2f8';ctx.font='700 '+Math.round(width*.025)+'px system-ui,sans-serif';ctx.fillText('CHICKEN-WIRE VIEW · E02 ROI',pad,Math.round(height*.055));
+    ctx.fillStyle='#ddf2f8';ctx.font='700 '+Math.round(width*.015)+'px system-ui,sans-serif';ctx.fillText('CHICKEN-WIRE VIEW · E02 ROI · v3.3',pad,Math.round(height*.055));
     ctx.fillStyle='#b6cbd4';ctx.font=Math.round(width*.014)+'px system-ui,sans-serif';ctx.fillText('Exploratory tissue-surface reconstruction · independent specimen',pad,Math.round(height*.09));
-    const y=Math.round(height*.82);ctx.strokeStyle='#3d6474';ctx.beginPath();ctx.moveTo(pad,y-22);ctx.lineTo(width-pad,y-22);ctx.stroke();
+    const y=Math.round(height*.81);ctx.strokeStyle='#3d6474';ctx.beginPath();ctx.moveTo(pad,y-22);ctx.lineTo(width-pad,y-22);ctx.stroke();
     ctx.fillStyle='#aee7f6';ctx.font='700 '+Math.round(width*.014)+'px system-ui,sans-serif';ctx.fillText('REOPEN THIS ROI SLICE',pad,y);
-    ctx.fillStyle='#e5f4f8';ctx.font=Math.round(width*.013)+'px ui-monospace,SFMono-Regular,monospace';ctx.fillText(roiID(),pad,y+Math.round(width*.023));
-    ctx.fillStyle='#a9c1ce';ctx.font=Math.round(width*.011)+'px system-ui,sans-serif';ctx.fillText('axis = acquisition axis · i = zero-based slice · 2.2 µm sampling · not registered to M07',pad,y+Math.round(width*.041));
-    ctx.fillText('Lovric et al., PLOS ONE (2017) · doi:10.1371/journal.pone.0183979',pad,y+Math.round(width*.056));
-    ctx.save();ctx.textAlign='right';ctx.fillText('Created by Arash · arashabadi.github.io/mlung3d',width-pad,height-pad);ctx.restore();
+    ctx.fillStyle='#e5f4f8';ctx.font=Math.round(width*.013)+'px ui-monospace,SFMono-Regular,monospace';ctx.fillText(roiID(),pad,y+Math.round(width*.020));
+    ctx.fillStyle='#a9c1ce';ctx.font=Math.round(width*.011)+'px system-ui,sans-serif';ctx.fillText('axis = acquisition axis · i = zero-based slice · 2.2 µm sampling · not registered to M07',pad,y+Math.round(width*.037));
+    ctx.fillText('Lovric et al., PLOS ONE (2017) · doi:10.1371/journal.pone.0183979',pad,y+Math.round(width*.053));
+    ctx.save();ctx.textAlign='right';ctx.font='600 '+Math.max(14,Math.round(width/105))+'px system-ui,sans-serif';ctx.fillText('Created by Arash · arashabadi.github.io/mlung3d',width-width*.02,height-height*.02);ctx.restore();
     return out;
   }
   document.getElementById('saveRoiPng').addEventListener('click',()=>{
