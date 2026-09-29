@@ -1,6 +1,6 @@
 {
-  "source": "viewer/mouse_lung_v3.1.html",
-  "output": "viewer/mouse_lung_v3.1_lite.html",
+  "source": "viewer/mouse_lung_v3.2.html",
+  "output": "viewer/mouse_lung_v3.2_lite.html",
   "grid_mm": 0.08,
   "source_bytes": 44929684,
   "light_bytes": 19022682,
