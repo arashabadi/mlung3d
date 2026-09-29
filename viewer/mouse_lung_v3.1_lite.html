@@ -949,7 +949,7 @@ function compactLayout(){
  tiltGroup.querySelector('.padHint').remove();
  const tiltInputs=document.createElement('div');tiltInputs.className='padNumbers';
  function addPlaneStepper(target,title,unit,step,parent){
-   const input=document.getElementById(target),row=document.createElement('div');row.className='padNumberRow';
+   const input=planeControls.querySelector('#'+target),row=document.createElement('div');row.className='padNumberRow';
    const label=document.createElement('label');label.htmlFor=target;label.textContent=title;
    const shell=document.createElement('div');shell.className='padNumberShell';
    shell.appendChild(input);
