@@ -24,3 +24,7 @@ The optional whole-body display fetches `mouse_reduced_face_7200.obj` at runtime
 ## Xenium context
 
 Exploratory day 14/day 30 section shape candidates in notebook 16 reference public GEO accessions GSM8837316 and GSM9364368. Their 3D planes are unregistered hypotheses. Xenium morphology images are not distributed in this repository.
+
+## Directional nomenclature and presentation export
+
+[Ruberte et al., *Harmonizing mouse anatomy terminology: a common language?*, Mammalian Genome (2025)](https://doi.org/10.1007/s00335-025-10156-6) is the terminology reference for right/left, ventral/dorsal, cranial/caudal and NAV-oriented planes. It is **not** a source of M07 measurements. M07 mesh geometry and its local millimeter frame still derive from the lapdMouse source above. Coordinates are not interchangeable with Xenium or the optional mouse-body model. The GIF encoder is [gifenc 1.0.3](https://github.com/mattdesl/gifenc) (MIT; `assets/LICENSE.gifenc.md`). Encoding occurs locally in the browser, not on GitHub Pages.
