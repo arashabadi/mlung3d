@@ -137,6 +137,21 @@ button:hover{border-color:rgba(124,216,255,.55)}button:active{transform:translat
 #presentationToolbar{padding:8px;gap:8px}#presentationToolbar button{min-width:44px;width:44px;height:44px;min-height:44px}#presentationToolbar svg{width:23px;height:23px}
 #slicePanel{width:min(440px,calc(100vw - 460px))!important;padding:14px!important}#slicePanel h2{font-size:17px!important}#slicePanel .small{font-size:11px!important}
 @media(max-width:760px){#uiResizeGrip{display:none}#ui{width:calc(100vw - 20px)!important;max-height:58vh!important;padding:12px!important}#ui .tiltPadWrap,#ui .offsetPadWrap{grid-template-columns:78px 80px minmax(92px,1fr);gap:6px}#ui #tiltPad{width:78px;height:78px}#ui #offsetPad{width:78px;min-width:78px;height:54px}#ui .padNumberRow{grid-template-columns:minmax(0,1fr) 18px;gap:3px}#ui .padNumberShell{height:32px}#ui .padStepArrows button{height:15px;min-height:15px}#slicePanel{top:auto!important;bottom:62px!important;right:10px!important;width:calc(100vw - 20px)!important;max-height:34vh!important}#presentationToolbar{top:auto;bottom:10px;right:10px;padding:5px;gap:3px}#presentationToolbar button{min-width:38px;width:38px;height:38px;min-height:38px}}
+
+#ui{container-type:inline-size}
+#ui .padNumberRow{font-size:12px}
+#ui .padNumberShell{height:54px}
+#ui .padNumberShell input{font-size:15px}
+#ui .padStepArrows button{width:34px;height:26px;min-height:26px;font-size:16px!important;line-height:24px}
+@container (max-width:430px){
+  #ui .tiltPadWrap,#ui .offsetPadWrap{grid-template-columns:minmax(0,1fr) 104px;gap:9px;padding:12px 0}
+  #ui .tiltPadWrap>span:first-child,#ui .offsetPadWrap>span:first-child{grid-column:1;min-width:0}
+  #ui #tiltPad,#ui #offsetPad{grid-column:2;grid-row:1;width:100px;min-width:100px}
+  #ui .padNumbers{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  #ui .offsetPadWrap .padNumbers{grid-template-columns:minmax(0,1fr)}
+  #ui .padNumberRow{min-width:0}
+}
+@media(max-width:760px){#ui .padStepArrows button{width:34px;height:26px;min-height:26px}#ui .padNumberShell{height:54px}}
 #roiVideoSetup{position:fixed;right:20px;top:80px;z-index:150;width:min(320px,calc(100vw - 40px));padding:16px;border:1px solid #42758a;border-radius:12px;background:#0a1821;color:#e8f5fa;box-shadow:0 15px 36px #0009}#roiVideoSetup[hidden]{display:none}#roiVideoSetup label,#roiVideoSetup select,#roiVideoSetup button{display:block;width:100%;margin:7px 0}#liteClipNotice{position:fixed;right:20px;top:92px;z-index:95;width:min(340px,calc(100vw - 40px));padding:18px 20px;border:1px solid #4a8398;border-radius:14px;background:#0b1a24;color:#e7f5fa;box-shadow:0 18px 40px #0009;font:14px/1.45 system-ui,sans-serif}#liteClipNotice[hidden]{display:none}#liteClipNotice strong{display:block;font-size:16px}#liteClipNotice p{margin:8px 0 14px;color:#bbd0db}#liteClipNotice a{color:#091923;background:#a8e3f1;border-radius:8px;padding:9px 12px;text-decoration:none;font-weight:750;display:inline-block}#liteClipClose{position:absolute;right:8px;top:7px;border:0;background:none;color:#b8d8e3;font-size:22px;cursor:pointer}@media(max-width:760px){#liteClipNotice{top:auto;bottom:68px;right:10px}}</style>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
 <style id="liteCaptureGateStyle">
@@ -1258,5 +1273,5 @@ window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(roiRecording)stopR
 }catch(err){console.error(err);progressText.textContent='Could not load the viewer';status.firstChild.textContent='3D viewer failed to initialize. '; const p=document.createElement('div');p.className='small';p.textContent=(err&&err.message)?('Error: '+err.message):'Use a current Chrome, Edge, Safari, or Firefox with internet access for Three.js.';status.appendChild(p)}
 })();
 </script>
-<aside id="liteClipNotice" role="status" hidden><button id="liteClipClose" type="button" aria-label="Dismiss notice">×</button><strong>Need the 2D section?</strong><p>Download the Full viewer and open the HTML locally to see this plane in 2D.</p><a href="mlung3d_v3.2_full.html" download="mlung3d-v3.2-full.html">Download Full viewer</a></aside><script>document.getElementById('toggleClip').addEventListener('click',()=>{queueMicrotask(()=>{document.getElementById('liteClipNotice').hidden=document.getElementById('toggleClip').textContent.trim()!=='Unclip';});});document.getElementById('liteClipClose').addEventListener('click',()=>{document.getElementById('liteClipNotice').hidden=true;});</script></body>
+<aside id="liteClipNotice" role="status" hidden><button id="liteClipClose" type="button" aria-label="Dismiss notice">×</button><strong>Need the 2D section?</strong><p>Download the Full viewer and open the HTML locally to see this plane in 2D.</p><a href="mlung3d_v3.2_full.html" download="mlung3d-v3.2-full.html">Download Full viewer</a></aside><script>document.getElementById('toggleClip').addEventListener('click',()=>{setTimeout(()=>{document.getElementById('liteClipNotice').hidden=document.getElementById('toggleClip').textContent.trim()!=='Unclip';},0);});document.getElementById('liteClipClose').addEventListener('click',()=>{document.getElementById('liteClipNotice').hidden=true;});</script></body>
 </html>
