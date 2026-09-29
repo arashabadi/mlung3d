@@ -97,7 +97,16 @@ button:hover{border-color:rgba(124,216,255,.55)}button:active{transform:translat
 #orientation>div:first-child{font-size:12.5px!important}
 </style>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
-</head>
+<style id="liteCaptureGateStyle">
+#saveLungPng,#recordLungGif,#recordLungVideo,#gifTimer,#pngSetup,#gifSetup,#videoSetup,#saveRoiPng{display:none!important}
+#liteExportGate{position:relative;color:#e3eff6;font:11px system-ui,sans-serif}
+#liteExportGate summary{list-style:none;cursor:pointer;white-space:nowrap;border:1px solid #355668;border-radius:10px;padding:8px 10px;background:#10212b}
+#liteExportGate summary::-webkit-details-marker{display:none}
+#liteExportGate[open] summary{border-color:#7bd9f3}
+#liteExportGate .liteGateBody{position:absolute;right:0;top:calc(100% + 8px);z-index:80;width:min(280px,calc(100vw - 24px));padding:14px;border:1px solid #355668;border-radius:12px;background:#0c1821;box-shadow:0 12px 30px #0009;line-height:1.45}
+#liteExportGate .liteGateBody p{color:#bdcbd5;margin:8px 0 12px}
+#liteExportGate .liteGateBody a{display:inline-block;color:#091923;background:#a8e3f1;border-radius:8px;padding:8px 10px;text-decoration:none;font-weight:700}
+</style></head>
 <body>
 <div id="app">
   <div id="scene" aria-label="Interactive high-detail mouse lung model extracted from Blender"></div>
@@ -209,7 +218,7 @@ button:hover{border-color:rgba(124,216,255,.55)}button:active{transform:translat
     <div id="orientationText" style="font-size:10px;line-height:1.42;margin-top:6px">View: Ventral · left=LE · right=RT · top≈CR</div>
     <div class="small" style="margin-top:4px">Frame: LE/RT · D/V · CR/CD</div>
   </div>
-  <div id="presentationToolbar" role="toolbar" aria-label="Presentation export and motion">
+  <div id="presentationToolbar" role="toolbar" aria-label="Motion and full-viewer download"><details id="liteExportGate"><summary>Record / export</summary><div class="liteGateBody"><strong>Full viewer required</strong><p>To save a PNG, GIF, or video, download the full-quality HTML and open it in your browser.</p><a href="mouse_lung_v3.1.html" download="mouse-lung-explorer-v3.1.html">Download full viewer</a></div></details>
     <button id="saveLungPng" type="button" class="iconButton" aria-label="Download transparent PNG" title="Download transparent PNG"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3l1.5-2h7L17 7h3v12H4z"/><circle cx="12" cy="13" r="3.2"/></svg></button>
     <button id="recordLungGif" type="button" class="iconButton" aria-label="Choose GIF recording quality" title="Choose GIF recording quality"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.1" fill="currentColor" stroke="none"/></svg></button><span id="gifTimer" hidden aria-hidden="true">00:00</span>
     <button id="recordLungVideo" type="button" class="iconButton" aria-label="Set up supplementary video" title="Set up supplementary video"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="12" height="12" rx="2"/><path d="m15 10 6-3v10l-6-3z"/></svg></button>
