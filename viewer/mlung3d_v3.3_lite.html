@@ -267,21 +267,21 @@ button:hover{border-color:rgba(124,216,255,.55)}button:active{transform:translat
     <div style="font-size:10.9px;color:var(--text);font-weight:720;margin-bottom:6px">Anatomical orientation</div>
     <svg id="orientationSvg" viewBox="0 0 128 128" width="124" height="124" aria-label="Anatomical orientation compass">
       <circle cx="64" cy="64" r="3" fill="#d7f3ff"></circle>
-      <line id="axisLR1" x1="64" y1="64" x2="64" y2="64" stroke="#83d7ff" stroke-width="2.2" stroke-linecap="round"></line>
-      <line id="axisLR2" x1="64" y1="64" x2="64" y2="64" stroke="#83d7ff" stroke-width="2.2" stroke-linecap="round" opacity=".8"></line>
-      <line id="axisAP1" x1="64" y1="64" x2="64" y2="64" stroke="#ffc38d" stroke-width="2.2" stroke-linecap="round"></line>
-      <line id="axisAP2" x1="64" y1="64" x2="64" y2="64" stroke="#ffc38d" stroke-width="2.2" stroke-linecap="round" opacity=".8"></line>
-      <line id="axisSI1" x1="64" y1="64" x2="64" y2="64" stroke="#8effb4" stroke-width="2.2" stroke-linecap="round"></line>
-      <line id="axisSI2" x1="64" y1="64" x2="64" y2="64" stroke="#8effb4" stroke-width="2.2" stroke-linecap="round" opacity=".8"></line>
-      <text id="labelL" x="64" y="64" fill="#9bdfff" font-size="11" text-anchor="middle" dominant-baseline="middle">L</text>
-      <text id="labelR" x="64" y="64" fill="#9bdfff" font-size="11" text-anchor="middle" dominant-baseline="middle">R</text>
-      <text id="labelA" x="64" y="64" fill="#ffd1a4" font-size="11" text-anchor="middle" dominant-baseline="middle">V</text>
-      <text id="labelP" x="64" y="64" fill="#ffd1a4" font-size="11" text-anchor="middle" dominant-baseline="middle">D</text>
-      <text id="labelS" x="64" y="64" fill="#a9efb9" font-size="11" text-anchor="middle" dominant-baseline="middle">Cr</text>
-      <text id="labelI" x="64" y="64" fill="#a9efb9" font-size="11" text-anchor="middle" dominant-baseline="middle">Cd</text>
+      <line id="axisLR1" x1="64" y1="64" x2="64" y2="64" stroke="#67c5e8" stroke-width="2.2" stroke-linecap="round"></line>
+      <line id="axisLR2" x1="64" y1="64" x2="64" y2="64" stroke="#67c5e8" stroke-width="2.2" stroke-linecap="round" opacity=".8"></line>
+      <line id="axisAP1" x1="64" y1="64" x2="64" y2="64" stroke="#e9b872" stroke-width="2.2" stroke-linecap="round"></line>
+      <line id="axisAP2" x1="64" y1="64" x2="64" y2="64" stroke="#e9b872" stroke-width="2.2" stroke-linecap="round" opacity=".8"></line>
+      <line id="axisSI1" x1="64" y1="64" x2="64" y2="64" stroke="#b5a1e5" stroke-width="2.2" stroke-linecap="round"></line>
+      <line id="axisSI2" x1="64" y1="64" x2="64" y2="64" stroke="#b5a1e5" stroke-width="2.2" stroke-linecap="round" opacity=".8"></line>
+      <text id="labelL" x="64" y="64" fill="#67c5e8" font-size="10" font-weight="600" font-family="system-ui, sans-serif" stroke="#080d12" stroke-width="3" paint-order="stroke fill" stroke-linejoin="round" text-anchor="middle" dominant-baseline="middle">L</text>
+      <text id="labelR" x="64" y="64" fill="#67c5e8" font-size="10" font-weight="600" font-family="system-ui, sans-serif" stroke="#080d12" stroke-width="3" paint-order="stroke fill" stroke-linejoin="round" text-anchor="middle" dominant-baseline="middle">R</text>
+      <text id="labelA" x="64" y="64" fill="#e9b872" font-size="10" font-weight="600" font-family="system-ui, sans-serif" stroke="#080d12" stroke-width="3" paint-order="stroke fill" stroke-linejoin="round" text-anchor="middle" dominant-baseline="middle">V</text>
+      <text id="labelP" x="64" y="64" fill="#e9b872" font-size="10" font-weight="600" font-family="system-ui, sans-serif" stroke="#080d12" stroke-width="3" paint-order="stroke fill" stroke-linejoin="round" text-anchor="middle" dominant-baseline="middle">D</text>
+      <text id="labelS" x="64" y="64" fill="#b5a1e5" font-size="10" font-weight="600" font-family="system-ui, sans-serif" stroke="#080d12" stroke-width="3" paint-order="stroke fill" stroke-linejoin="round" text-anchor="middle" dominant-baseline="middle">Cr</text>
+      <text id="labelI" x="64" y="64" fill="#b5a1e5" font-size="10" font-weight="600" font-family="system-ui, sans-serif" stroke="#080d12" stroke-width="3" paint-order="stroke fill" stroke-linejoin="round" text-anchor="middle" dominant-baseline="middle">Cd</text>
     </svg>
     <div id="orientationText" style="font-size:10px;line-height:1.42;margin-top:6px">Ventral view. Mouse left appears on the right side of the image; cranial points up.</div>
-    <div class="orientationLegend">Blue: left / right &nbsp;·&nbsp; Amber: ventral / dorsal &nbsp;·&nbsp; Green: cranial / caudal</div>
+    <div class="orientationLegend"><span style="color:#67c5e8">R / L · Right / Left</span><br><span style="color:#e9b872">V / D · Ventral / Dorsal</span><br><span style="color:#b5a1e5">Cr / Cd · Cranial / Caudal</span></div>
   </div>
   <div id="presentationToolbar" role="toolbar" aria-label="Motion and full-viewer download"><details id="liteExportGate"><summary>Publication export</summary><div class="liteGateBody"><strong>Explore more. Export your view.</strong><p>Detailed 3D, 2D sections and alveolar views—with image, GIF and video export.</p><a href="mlung3d_v3.3_full.html" download="mlung3d-v3.3-full.html">Download Full HTML · about 43 MB</a><small>Open the downloaded HTML in your browser. No installation; internet needed for the 3D engine.</small></div></details>
     <button id="saveLungPng" type="button" class="iconButton" aria-label="Download transparent PNG" title="Download transparent PNG"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3l1.5-2h7L17 7h3v12H4z"/><circle cx="12" cy="13" r="3.2"/></svg></button>
@@ -895,6 +895,22 @@ async function copyPlaneAddress(link){
     setLabel(orientationEls.L,Lp.x,Lp.y); setLabel(orientationEls.R,Rp.x,Rp.y);
     setLabel(orientationEls.A,Ap.x,Ap.y); setLabel(orientationEls.P,Pp.x,Pp.y);
     setLabel(orientationEls.S,Sp.x,Sp.y); setLabel(orientationEls.I,Ip.x,Ip.y);
+    // Place labels outside the axis tips and separate projected directions.
+    const labels=[orientationEls.L,orientationEls.R,orientationEls.A,orientationEls.P,orientationEls.S,orientationEls.I];
+    const placed=[];
+    labels.forEach((el,i)=>{
+      const dx=Number(el.getAttribute('x'))-64,dy=Number(el.getAttribute('y'))-64;
+      const angle=Math.hypot(dx,dy)>3?Math.atan2(dy,dx):(-Math.PI/2+i*Math.PI/3);
+      let best=null;
+      for(const radius of [49,37,25])for(let step=0;step<24;step++){
+        const turn=step===0?0:Math.ceil(step/2)*(step%2?1:-1)*Math.PI/12;
+        const x=64+radius*Math.cos(angle+turn),y=64+radius*Math.sin(angle+turn);
+        if(placed.some(p=>Math.abs(p.x-x)<22&&Math.abs(p.y-y)<15))continue;
+        const score=Math.abs(turn)*20+Math.abs(radius-49);
+        if(!best||score<best.score)best={x,y,score};
+      }
+      if(best){setLabel(el,best.x,best.y);placed.push(best);}
+    });
     const leftSide=screenSideName(modelMirroredLR?new THREE.Vector3(1,0,0):new THREE.Vector3(-1,0,0));
     const crSide=screenSideName(new THREE.Vector3(0,0,1));
     const dorsalSide=screenSideName(new THREE.Vector3(0,-1,0));
@@ -1110,7 +1126,7 @@ window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(roiRecording)stopR
     ctx.save();ctx.translate(x,y);ctx.scale(scale,scale);
     for(const line of svg.querySelectorAll('line')){ctx.beginPath();ctx.moveTo(Number(line.getAttribute('x1')),Number(line.getAttribute('y1')));ctx.lineTo(Number(line.getAttribute('x2')),Number(line.getAttribute('y2')));ctx.strokeStyle=line.getAttribute('stroke')||'#d7f3ff';ctx.globalAlpha=Number(line.getAttribute('opacity')||1);ctx.lineWidth=2.5;ctx.lineCap='round';ctx.stroke()}
     ctx.globalAlpha=1;ctx.fillStyle='#d7f3ff';ctx.beginPath();ctx.arc(64,64,3,0,Math.PI*2);ctx.fill();ctx.font='bold 10px system-ui,sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
-    for(const label of svg.querySelectorAll('text')){ctx.fillStyle=label.getAttribute('fill')||'#d7f3ff';ctx.fillText(label.textContent,Number(label.getAttribute('x')),Number(label.getAttribute('y')))}ctx.restore();
+    for(const label of svg.querySelectorAll('text')){ctx.fillStyle=label.getAttribute('fill')||'#d7f3ff';ctx.strokeStyle='#080d12';ctx.lineWidth=3;ctx.lineJoin='round';ctx.strokeText(label.textContent,Number(label.getAttribute('x')),Number(label.getAttribute('y')));ctx.fillText(label.textContent,Number(label.getAttribute('x')),Number(label.getAttribute('y')))}ctx.restore();
     const guide=document.getElementById('orientationText');
     const lines=[
       'View: '+(guide.dataset.viewName||'Ventral'),
