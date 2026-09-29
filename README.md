@@ -11,7 +11,7 @@ The gross lung shape and airways are a published M07 anatomical reference. The E
 | 2.5–2.7 | `viewer/archive/*v25*` through `*v27*` | Reference viewer lineage |
 | 2.8 | `viewer/archive/mouse_lung_v28.html` | Independent ROI and readable plane IDs |
 | 2.9 | `viewer/archive/mouse_lung_v29.html` | Schematic whole-lung toggle |
-| 3.0 | `viewer/mouse_lung_v3.0.html` | Schematic 2D cuts, provenance labels and PNG export |
+| 3.0 | `viewer/archive/mouse_lung_v3.0.html` | Schematic 2D cuts, provenance labels and PNG export |
 | 3.1 | `viewer/mouse_lung_v3.1.html` | Transparent PNG/GIF presentation exports, compact NAV-oriented plane controls |
 
 The version numbers in historical filenames were `v25`–`v30`; the public display numbering is 2.5–3.1. `viewer/archive/mouse_lung_v30.html` preserves the exact pre-release HTML for provenance.
@@ -34,4 +34,4 @@ M07 plane addresses use its own millimeter coordinate frame. Right/ventral/crani
 
 ## Lightweight public preview
 
-The [interactive Lite preview](viewer/mouse_lung_v3.1_lite.html) is derived by [notebook 19](notebooks/19_public_light_viewer.ipynb) from the full M07 viewer. It clusters surface vertices on a 0.08 mm grid, reducing the page from 42.8 MiB to about 18.1 MiB and gross mesh triangles from 3.94 million to 0.74 million. Rotation, plane positioning, and the independent E02 ROI remain interactive. The 2D clipping control is disabled in Lite because vertex clustering does not preserve reliable closed section contours. Open the full viewer for 2D sections, detailed anatomical interpretation, and every PNG/GIF/video export. Lite replaces capture controls with a full-viewer download prompt. Both builds execute rendering and encoding in the visitor’s browser; static hosting only serves files.
+The [interactive Lite preview](viewer/mouse_lung_v3.1_lite.html) is derived by [notebook 19](notebooks/19_public_light_viewer.ipynb) from the full M07 viewer. It clusters surface vertices on a 0.08 mm grid, reducing the page from 42.8 MiB to about 18.1 MiB and gross mesh triangles from 3.94 million to 0.74 million. Rotation, plane positioning, and the independent E02 ROI remain interactive. Lite retains interactive 3D clipping, but its 2D section panel is hidden because vertex clustering does not preserve reliable closed contours. Download and open the Full HTML locally for 2D sections, detailed anatomical interpretation, and every PNG/GIF/video export. Lite replaces capture controls with a full-viewer download prompt. Both builds render in the visitor’s browser; only the locally opened Full HTML enables PNG/GIF/video encoding. Static hosting only serves files.
