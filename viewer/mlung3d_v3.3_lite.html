@@ -205,7 +205,7 @@ button:hover{border-color:rgba(124,216,255,.55)}button:active{transform:translat
 #alveolarDialog button,#alveolarDialog select{font-size:14px;min-height:42px}
 @container(max-width:390px){#ui .tiltPadWrap,#ui .offsetPadWrap{grid-template-columns:1fr 1fr}#ui .padNumbers{grid-column:1/-1;grid-template-columns:1fr 1fr}#ui .offsetPadWrap .padNumbers{grid-template-columns:1fr}}
 @media(max-width:760px){#ui{padding:16px!important}#ui h1{font-size:20px!important}#infoPanel{width:calc(100vw - 20px);padding:20px}#ui .miniDetails summary{padding:12px}#presentationToolbar button{width:42px;height:42px;min-height:42px;min-width:42px}#alveolarDialog header{flex-wrap:wrap;gap:12px}}
-</style><style id="liteCaptureGateStyle">
+</style><style>#ui .projectLinks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}#ui .projectLinks a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:8px;border:1px solid #304b5a;border-radius:12px;color:#bddbe7;background:rgba(120,190,210,.04);font:600 14px system-ui,sans-serif;text-decoration:none}#ui .projectLinks a:hover{background:#19313e;border-color:#67c5e8}#ui .projectLinks a:focus-visible{outline:2px solid #67c5e8;outline-offset:3px}#ui .projectLinks svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}#ui [aria-label="Explore and homepage"]{grid-template-columns:1fr}</style><style id="liteCaptureGateStyle">
 #saveLungPng,#recordLungGif,#recordLungVideo,#gifTimer,#pngSetup,#gifSetup,#videoSetup,#saveRoiPng,#recordRoiVideo,#slicePanel,#clipInset{display:none!important}
 #liteExportGate{position:relative;color:#e3eff6;font:11px system-ui,sans-serif}
 #liteExportGate summary{list-style:none;cursor:pointer;white-space:nowrap;border:1px solid #355668;border-radius:10px;padding:13px 17px;background:#10212b;font-size:15px;font-weight:750}
@@ -229,12 +229,9 @@ button:hover{border-color:rgba(124,216,255,.55)}button:active{transform:translat
     </div>
     <div class="btnGrid two compact" aria-label="Viewer tools">
       <button id="toggleClip">Clip</button>
-      <button id="toggleInfo" class="ghost">Info</button>
+      <button id="toggleInfo" class="ghost" title="Model notes, sources, citation and acknowledgements">About &amp; sources</button>
     </div>
-    <div class="btnGrid two" aria-label="Explore and homepage">
-      <button id="openAlveolar" type="button" class="primary">Alveolar ROI · Full only</button>
-      <a id="homeLink" class="homeButton" href="https://arashabadi.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Open Arash Bagherabadi homepage">Homepage ↗</a>
-    </div>
+    <div class="btnGrid" aria-label="Explore and homepage"><button id="openAlveolar" type="button" class="primary">Alveolar ROI · Full only</button></div><nav class="projectLinks" aria-label="Project and author links"><a id="githubLink" href="https://github.com/arashabadi/mlung3d" target="_blank" rel="noopener noreferrer" aria-label="Open project source on GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6 2 12l6 6M16 6l6 6-6 6M14 4l-4 16"/></svg>GitHub</a><a id="homeLink" href="https://arashabadi.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Open author website"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7M21 3l-11 11M10 5H3v16h16v-7"/></svg>Author website</a></nav>
     <div class="btnGrid two" aria-label="Camera presets">
       <button data-view="ventral">Ventral</button>
       <button data-view="dorsal">Dorsal</button>
