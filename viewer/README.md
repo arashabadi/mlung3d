@@ -5,4 +5,4 @@
 
 The E02 ROI is not registered to M07. Whole-lung alveoli are schematic. An M07 plane address identifies a plane in this reference mesh, not a Xenium specimen. Rebuild through [notebook 21](../notebooks/21_viewer_v3_3.ipynb) and [notebook 19](../notebooks/19_public_light_viewer.ipynb); source details are in [SOURCES.md](../SOURCES.md).
 
-The previous [v3.2 Full](archive/mlung3d_v3.2_full.html) and [v3.2 Lite](archive/mlung3d_v3.2_lite.html) are archived. Older development history is available in Git.
+[Archived viewers](archive/README.md) begin with v3.3. Earlier releases remain in Git history.

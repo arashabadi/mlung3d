@@ -1,7 +1,7 @@
 {
   "version": "3.3",
-  "full_bytes": 46936565,
-  "sha256": "3b7ee93960ef05d5ad0a001cebdc17ff59d93fce0e65a4a4816d8244260d1573",
+  "full_bytes": 46936713,
+  "sha256": "08ffd4f004f83b45aac0c29b219eee872aeaee167e3cda41bff31228f8e064c6",
   "browser": "Chrome headless, offline context, file:// HTML",
   "network_requests": 0,
   "page_errors": 0,
