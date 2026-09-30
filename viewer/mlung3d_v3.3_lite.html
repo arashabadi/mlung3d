@@ -323,6 +323,7 @@ button:hover{border-color:rgba(124,216,255,.55)}button:active{transform:translat
     <button id="recordLungGif" type="button" class="iconButton" aria-label="Choose GIF recording quality" title="Choose GIF recording quality"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.1" fill="currentColor" stroke="none"/></svg></button><span id="gifTimer" hidden aria-hidden="true">00:00</span>
     <button id="recordLungVideo" type="button" class="iconButton" aria-label="Set up supplementary video" title="Set up supplementary video"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="12" height="12" rx="2"/><path d="m15 10 6-3v10l-6-3z"/></svg></button>
     <button id="resumeRotateBtn" type="button" class="iconButton" aria-label="Play rotation" title="Play rotation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+<button id="resetViewer" type="button" aria-label="Reset viewer to default Ventral view" title="Reset viewer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M20 12a8 8 0 1 0-2.3 5.7"/></svg></button>
     <button id="rotationSpeed" type="button" class="speedButton" aria-label="Rotation speed 1 times" title="Change automatic rotation speed">1×</button>
   </div>
   <div id="pngSetup" class="panel" role="dialog" aria-label="PNG export settings" hidden>
@@ -742,7 +743,19 @@ async function copyPlaneAddress(link){
   controls.addEventListener('start',()=>{currentView='Custom'; stopAutoRotateByUser();});
   renderer.domElement.addEventListener('wheel',()=>stopAutoRotateByUser(),{passive:true});
   resumeRotateBtn.addEventListener('click',()=>autoRotateStoppedByUser?resumeAutoRotate():stopAutoRotateByUser());
-  const speedButton=document.getElementById('rotationSpeed');const speedValues=[1,1.5,2];let speedIndex=0;speedButton.addEventListener('click',()=>{speedIndex=(speedIndex+1)%speedValues.length;controls.autoRotateSpeed=speedValues[speedIndex];speedButton.textContent=speedValues[speedIndex]+'×';speedButton.setAttribute('aria-label','Rotation speed '+speedValues[speedIndex]+' times');});setResumeButton();
+  const speedButton=document.getElementById('rotationSpeed');const speedValues=[1,1.5,2,2.5,3];let speedIndex=0;speedButton.addEventListener('click',()=>{speedIndex=(speedIndex+1)%speedValues.length;controls.autoRotateSpeed=speedValues[speedIndex];speedButton.textContent=speedValues[speedIndex]+'×';speedButton.setAttribute('aria-label','Rotation speed '+speedValues[speedIndex]+' times');});setResumeButton();
+  document.getElementById('resetViewer').addEventListener('click',()=>{
+    stopAutoRotateByUser();speedIndex=0;controls.autoRotateSpeed=1;speedButton.textContent='1×';speedButton.setAttribute('aria-label','Rotation speed 1 times');
+    mouseContextGroup.visible=false;applyLungPlacement(false);const bodyButton=document.getElementById('toggleMouseContext');bodyButton.classList.remove('active');bodyButton.textContent='Mouse body';
+    clipping=false;sectionVisible=false;sectionDepth=0;sectionAngle=15;sectionTilt=0;sectionGroup.visible=false;
+    const clipButton=document.getElementById('toggleClip');clipButton.classList.remove('active');clipButton.textContent='Clip';document.getElementById('toggleSection').textContent='Show plane';
+    for(const id of ['depth','angle','angle2','opacity']){const input=document.getElementById(id);if(input){input.value=input.defaultValue;input.dispatchEvent(new Event('input',{bubbles:true}));}}
+    for(const id of ['airwayVisible','lobesVisible','wholeAlveoli']){const input=document.getElementById(id);if(input){input.checked=input.defaultChecked;input.dispatchEvent(new Event('change',{bubbles:true}));}}
+    updateSection();syncPlaneControls();document.getElementById('planeDetails').open=false;document.getElementById('viewDetails').open=true;
+    for(const id of ['pngSetup','gifSetup','videoSetup','alveolarDialog','liteClipNotice']){const panel=document.getElementById(id);if(panel)panel.hidden=true;}
+    const gate=document.getElementById('liteExportGate');if(gate)gate.open=false;
+    setInfoOpen(false);currentView='Ventral';updateSideHint(currentView);camera.up.set(0,0,1);camera.position.copy(viewPosition('ventral'));controls.target.copy(activeCenter());camera.lookAt(activeCenter());controls.update();
+  });
   const presetLabel={ventral:'Ventral',dorsal:'Dorsal',left:'Left lateral',right:'Right lateral'};
   function updateSideHint(viewName=currentView){ if(!sideHint) return; const table={Ventral:'Ventral view: screen-left = mouse RIGHT lung · screen-right = mouse LEFT lung',Dorsal:'Dorsal view: screen-left = mouse LEFT lung · screen-right = mouse RIGHT lung','Left lateral':'Left lateral view: the single left lung is nearest the camera','Right lateral':'Right lateral view: the four-lobed right lung is nearest the camera',Custom:'Custom view: use the orientation compass for left/right confirmation'}; sideHint.innerHTML=table[viewName]||table.Custom; }
   document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{stopAutoRotateByUser(); currentView=presetLabel[b.dataset.view]||'Custom'; updateSideHint(currentView); flyCamera(viewPosition(b.dataset.view),activeCenter());}));
@@ -1187,19 +1200,19 @@ window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(roiRecording)stopR
   function drawExportLobeLegend(ctx,width,height,clipped){
     const items=[...document.querySelectorAll('.legendGrid .legendItem')].map(node=>({name:node.textContent.trim(),color:getComputedStyle(node.querySelector('.dot')).backgroundColor}));
     const unit=width/1600, gap=width*.015, pad=width*.014;
-    const x=clipped?Math.round(width*.63)+pad:width-width*.024-280*unit;
-    const areaWidth=clipped?width-Math.round(width*.63)-gap-2*pad:280*unit;
+    const x=clipped?Math.round(width*.63)+pad:width-width*.024-430*unit;
+    const areaWidth=clipped?width-Math.round(width*.63)-gap-2*pad:430*unit;
     const addressY=height-height*.19;
-    const y=clipped?addressY-92*unit:height*.10;
+    const y=clipped?addressY-92*unit:height-150*unit;
     const row=22*unit,font=12*unit;
     ctx.save();ctx.textAlign='left';ctx.textBaseline='middle';ctx.font='600 '+font+'px system-ui,sans-serif';
     items.forEach((item,i)=>{
-      const column=clipped?i%2:0,r=clipped?Math.floor(i/2):i;
+      const column=i%2,r=Math.floor(i/2);
       const px=x+column*areaWidth/2,py=y+r*row;
       ctx.fillStyle=item.color;ctx.beginPath();ctx.arc(px+4*unit,py,3*unit,0,Math.PI*2);ctx.fill();
-      ctx.fillStyle='#dcecf2';ctx.fillText(item.name,px+14*unit,py,(clipped?areaWidth/2:areaWidth)-20*unit);
+      ctx.fillStyle='#dcecf2';ctx.fillText(item.name,px+14*unit,py,areaWidth/2-20*unit);
     });
-    if(wholeAlveolarGroup.visible){ctx.fillStyle='#b9d3dd';ctx.font=10*unit+'px system-ui,sans-serif';ctx.fillText('Airspaces: schematic',x,y+(clipped?3:6)*row,areaWidth)}
+    if(wholeAlveolarGroup.visible){ctx.fillStyle='#b9d3dd';ctx.font=10*unit+'px system-ui,sans-serif';ctx.fillText('Airspaces: schematic',x,y+3*row,areaWidth)}
     ctx.restore();
   }
   function presentationFrame(maxWidth,forGif=false,showSection=false,transparent=false){
