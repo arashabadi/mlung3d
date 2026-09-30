@@ -1,6 +1,6 @@
 # Mouse Lung Explorer · v3.3
 
-Explore a reference mouse lung in 3D: [open the Lite viewer](https://arashabadi.github.io/mlung3d/). For accurate model-mesh sections and image/video exports, [download the Full HTML](viewer/mlung3d_v3.3_full.html) and open it in a browser. Full is a single file but needs internet access for Three.js.
+Explore a reference mouse lung in 3D: [open the Lite viewer](https://arashabadi.github.io/mlung3d/). For accurate model-mesh sections and image/video exports, [download the Full HTML](viewer/mlung3d_v3.3_full.html) and open it in a browser. Full is a single, fully offline HTML file (about 47 MB); no installation or internet connection is required.
 
 Lite is a fast, simplified display mesh. Full uses the original M07 surface. The separate alveolar ROI comes from a different mouse and is not registered to M07; whole-lung alveoli are schematic. Neither viewer locates Xenium D14/D30 sections in 3D.
 

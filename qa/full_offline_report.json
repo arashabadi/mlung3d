@@ -1,0 +1,17 @@
+{
+  "version": "3.3",
+  "full_bytes": 46930447,
+  "sha256": "6467d5f12871ecb839b6b0547cfea1368d1399a7d9db5766a649398e9edf5c23",
+  "browser": "Chrome headless, offline context, file:// HTML",
+  "network_requests": 0,
+  "page_errors": 0,
+  "verified": [
+    "lung render",
+    "mouse body",
+    "Clip section",
+    "E02 alveolar ROI",
+    "GIF export with live Clip switch",
+    "video export with live Clip switch"
+  ],
+  "three_version": "0.180.0"
+}

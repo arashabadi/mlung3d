@@ -254,7 +254,7 @@ button:hover{border-color:rgba(124,216,255,.55)}button:active{transform:translat
     <li><a href="https://doi.org/10.1007/s00335-025-10156-6" target="_blank" rel="noopener">Ruberte et al. (2025)</a> — quadruped orientation terms.</li>
     <li><a href="https://doi.org/10.1371/journal.pone.0183979" target="_blank" rel="noopener">Lovric et al. (2017)</a> — independent alveolar ROI.</li>
   </ul></div>
-  <div class="planeCard"><div class="planeKicker">How to cite</div><p class="small">Arash Bagherabadi. <em>Mouse Lung Explorer</em> (v3.3) [Software]. <a href="https://arashabadi.github.io/mlung3d/" target="_blank" rel="noopener">arashabadi.github.io/mlung3d/</a></p></div>
+  <div class="planeCard"><div class="planeKicker">How to cite</div><p class="small">Arash Bagherabadi and Abel Lopez. <em>Mouse Lung Explorer</em> (v3.3) [Software]. <a href="https://arashabadi.github.io/mlung3d/" target="_blank" rel="noopener">arashabadi.github.io/mlung3d/</a></p></div>
   <div class="planeCard"><div class="planeKicker">Acknowledgements</div><p class="small">Thank you to <a href="https://github.com/alopez789" target="_blank" rel="noopener">Abel Lopez</a> for helping build the 3D lung and airway model, and to Codex (GPT-6) for assistance with implementation and documentation.</p></div>
 </aside>
   <aside id="slicePanel" class="panel" hidden style="right:16px;top:155px;width:min(420px,calc(100vw - 32px));max-height:calc(100vh - 175px);overflow:auto;padding:14px;z-index:35"><h2 style="font-size:16px">2D section · reference mesh</h2><canvas id="sliceCanvas" width="640" height="570" style="width:100%;background:#080d12"></canvas><div id="sliceStatus" class="small"></div><p class="small">All lobes and airway mesh, regardless of 3D visibility. Colors identify lobes. This 2D view intersects the M07 lobe and airway surface meshes at the selected plane; it does not contain cellular detail. When enabled, schematic airspaces show exact intersections of the enlarged display polyhedra, not measured histology. Airway color denotes the supplied surface intersection, not a validated lumen.</p></aside>
@@ -283,7 +283,7 @@ button:hover{border-color:rgba(124,216,255,.55)}button:active{transform:translat
     <div id="orientationText" style="font-size:10px;line-height:1.42;margin-top:6px">Ventral view. Mouse left appears on the right side of the image; cranial points up.</div>
     <div class="orientationLegend"><span style="color:#67c5e8">R / L · Right / Left</span><br><span style="color:#e9b872">V / D · Ventral / Dorsal</span><br><span style="color:#b5a1e5">Cr / Cd · Cranial / Caudal</span></div>
   </div>
-  <div id="presentationToolbar" role="toolbar" aria-label="Motion and full-viewer download"><details id="liteExportGate"><summary>Publication export</summary><div class="liteGateBody"><strong>Explore more. Export your view.</strong><p>Detailed 3D, 2D sections and alveolar views—with image, GIF and video export.</p><a href="mlung3d_v3.3_full.html" download="mlung3d-v3.3-full.html">Download Full HTML · about 43 MB</a><small>Open the downloaded HTML in your browser. No installation; internet needed for the 3D engine.</small></div></details>
+  <div id="presentationToolbar" role="toolbar" aria-label="Motion and full-viewer download"><details id="liteExportGate"><summary>Publication export</summary><div class="liteGateBody"><strong>Explore more. Export your view.</strong><p>Detailed 3D, 2D sections and alveolar views—with image, GIF and video export.</p><a href="mlung3d_v3.3_full.html" download="mlung3d-v3.3-full.html">Download Full HTML · about 47 MB</a><small>Open the downloaded HTML in your browser. No installation or internet needed.</small></div></details>
     <button id="saveLungPng" type="button" class="iconButton" aria-label="Download transparent PNG" title="Download transparent PNG"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3l1.5-2h7L17 7h3v12H4z"/><circle cx="12" cy="13" r="3.2"/></svg></button>
     <button id="recordLungGif" type="button" class="iconButton" aria-label="Choose GIF recording quality" title="Choose GIF recording quality"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.1" fill="currentColor" stroke="none"/></svg></button><span id="gifTimer" hidden aria-hidden="true">00:00</span>
     <button id="recordLungVideo" type="button" class="iconButton" aria-label="Set up supplementary video" title="Set up supplementary video"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="12" height="12" rx="2"/><path d="m15 10 6-3v10l-6-3z"/></svg></button>
@@ -323,9 +323,9 @@ button:hover{border-color:rgba(124,216,255,.55)}button:active{transform:translat
 (async()=>{
 const status=document.getElementById('status'), progress=document.getElementById('progress'), progressText=document.getElementById('progressText');
 try{
-  const THREE=await import('three');
-  const {OrbitControls}=await import('three/addons/controls/OrbitControls.js');
-  const {OBJLoader}=await import('three/addons/loaders/OBJLoader.js');
+  const THREE=await import('three'); const {OrbitControls}=await import('three/addons/controls/OrbitControls.js'); const {OBJLoader}=await import('three/addons/loaders/OBJLoader.js');
+
+
   const payload=JSON.parse(document.getElementById('meshPayload').textContent);
   const mount=document.getElementById('scene');
   const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true,stencil:true,preserveDrawingBuffer:true,powerPreference:'high-performance'});
@@ -367,7 +367,7 @@ try{
     if(button) button.textContent='Loading mouse…';
     progressText.textContent='Loading CT-derived mouse body mesh'; progress.style.width='96%';
     try{
-      const text=await fetch(mouseObjUrl).then(r=>{if(!r.ok) throw new Error('mouse body download failed'); return r.text()});
+      const text=await fetch(mouseObjUrl).then(r=>{if(!r.ok)throw new Error('mouse body download failed');return r.text()});
       const obj=new OBJLoader().parse(text);
       const temp=new THREE.Group();
       obj.traverse(node=>{
