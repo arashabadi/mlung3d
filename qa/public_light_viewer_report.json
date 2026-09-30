@@ -3,7 +3,7 @@
   "output": "viewer/mlung3d_v3.3_lite.html",
   "grid_mm": 0.12,
   "source_bytes": 46936713,
-  "light_bytes": 4190344,
+  "light_bytes": 4190337,
   "source_vertices": 1971654,
   "light_vertices": 173760,
   "source_faces": 3944782,
