@@ -1,11 +1,18 @@
 # Mouse Lung Explorer · v3.3
 
-Explore a reference mouse lung in 3D: [open the Lite viewer](https://arashabadi.github.io/mlung3d/). For accurate model-mesh sections and image/video exports, [download the Full HTML](viewer/mlung3d_v3.3_full.html) and open it in a browser. Full is a single, fully offline HTML file (about 47 MB); no installation or internet connection is required.
+Interactive 3D mouse lung anatomy with movable section planes.
 
-Lite is a fast, simplified display mesh. Full uses the original M07 surface. The separate alveolar ROI comes from a different mouse and is not registered to M07; whole-lung alveoli are schematic. Neither viewer locates Xenium D14/D30 sections in 3D.
+- **[Open Lite online](https://arashabadi.github.io/mlung3d/)** — fast 3D preview with rotation and clipping.
+- **[Download Full HTML](https://arashabadi.github.io/mlung3d/viewer/mlung3d_v3.3_full.html)** — about 47 MB; open locally for 2D sections, alveolar views, PNG/JPEG exports and GIF/video recording. Fully offline, no installation required.
 
-Rebuild Full with [notebook 21](notebooks/21_viewer_v3_3.ipynb), then Lite with [notebook 19](notebooks/19_public_light_viewer.ipynb). See [sources and data provenance](SOURCES.md) and the DOI links inside **About & sources**. Raw inputs under `data/` are ignored by Git.
+Full uses the original M07 surface; Lite uses a simplified mesh. The measured alveolar ROI is a separate specimen, not registered to M07. Whole-lung alveoli are schematic.
 
-[Archived viewers](viewer/archive/README.md) begin with v3.3.
+## How to cite
 
-Created by Arash · [homepage](https://arashabadi.github.io/). MIT license.
+Arash Bagherabadi and Abel Lopez. *Mouse Lung Explorer* (v3.3) [Software]. https://arashabadi.github.io/mlung3d/
+
+## Reproduce & explore
+
+Rebuild [Full with notebook 21](notebooks/21_viewer_v3_3.ipynb), then [Lite with notebook 19](notebooks/19_public_light_viewer.ipynb). [Sources](SOURCES.md) · [Archive (v3.3 onward)](viewer/archive/README.md). Raw data under `data/` are excluded from Git.
+
+[Author website](https://arashabadi.github.io/) · [MIT license](LICENSE)
