@@ -3,7 +3,7 @@
 Interactive 3D mouse lung anatomy with movable section planes.
 
 - **[Open Lite online](https://arashabadi.github.io/mlung3d/)** — fast 3D preview with rotation and clipping.
-- **[Download Full HTML](https://arashabadi.github.io/mlung3d/viewer/mlung3d_v3.3_full.html)** — about 47 MB; open locally for 2D sections, alveolar views, PNG/JPEG exports and GIF/video recording. Fully offline, no installation required.
+- **[Download Full HTML](https://arashabadi.github.io/mlung3d/viewer/mlung3d_v3.3_full.html)** — about 47 MB; open locally for virtual 2D sections, alveolar views, PNG/JPEG exports and GIF/video recording. Fully offline, no installation required.
 
 Full uses the original M07 surface; Lite uses a simplified mesh. The measured alveolar ROI is a separate specimen, not registered to M07. Whole-lung alveoli are schematic.
 
