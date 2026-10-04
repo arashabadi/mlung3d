@@ -5,3 +5,12 @@
 /viewer/mouse_lung_v28.html
 /viewer/mouse_lung_v29.html
 /viewer/mouse_lung_v30.html
+
+# Local-only experimental v4 series.
+/viewer/*v4*
+/assets/build/*v4*
+/notebooks/*v4*
+/qa/*v4*
+
+# Visible local v4 work and reference assets; excluded from GitHub.
+/v4/
